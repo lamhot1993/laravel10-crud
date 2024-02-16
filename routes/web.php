@@ -12,8 +12,12 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/',function(){
+    return view('home');
+});
 
-Route::get('/users', [UserController::class, 'get']);
-Route::post('/users', [UserController::class, 'add']);
+Route::post('/get-users', [UserController::class, 'get']);
+Route::post('/add-user', [UserController::class, 'add']);
 Route::post('/update-user', [UserController::class, 'update']);
 Route::post('/delete-user', [UserController::class, 'delete']);
+Route::post('/login-user',[UserController::class,'login']);

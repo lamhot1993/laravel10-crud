@@ -42,4 +42,14 @@ class UserController extends Controller
  
         return $Users->delete();
     }
+
+    public function login(Request $request){
+
+        $username = $request->username;
+        $email = $request->email;
+
+        return  Users::where('username', $username)
+                        ->where('email',$email)
+                        ->get();
+    }
 }
